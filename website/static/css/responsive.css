@@ -1,0 +1,10 @@
+@media (max-width: 380px) {
+    .storage {
+        padding-top: 0;
+        position: relative;
+        top: -45px;
+    }
+    .storage img {
+        width: 90%;
+    }
+}

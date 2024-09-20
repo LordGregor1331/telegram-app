@@ -1,0 +1,7 @@
+.plus-one {
+    font-size: 24px;
+    color: green;
+    font-weight: bold;
+    pointer-events: none;
+    user-select: none;
+}
