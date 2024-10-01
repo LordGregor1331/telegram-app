@@ -1111,7 +1111,7 @@
         color: white;
         font-size: 18px;
     }
-    .nft-navigation {
+    .nft-navigation, .wallet-navigation {
         background: linear-gradient(to bottom, #E06B14, #FD902B);
         display: flex;
         justify-content: space-between;
@@ -1120,13 +1120,13 @@
         padding: 1% 1%;
         box-shadow: inset 0px 1px 2px 0px rgba(255, 255, 255, 0.25), 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
     }
-    .nft-navpoint {
+    .nft-navpoint, .wallet-navpoint {
         list-style-type: none;
         padding: 0;
         width: 50%;
         text-align: center;
     }
-    .nft-navpoint-active {
+    .nft-navpoint-active, .wallet-navpoint-active {
         background: linear-gradient(to bottom, #FFBA34, #FE881C);
         border: 1px solid #FFFFFF;
         border-radius: 20px;
@@ -1246,6 +1246,107 @@
     }
     .nftmarket-active {
         display: block;
+    }
+    #wallet-page {
+        background-color: #412810;
+    }
+    .wallet-navigation {
+        padding: 2% 2%;
+    }
+    .wallet-balance {
+        margin-bottom: 5%;
+    }
+    .wallet-balance h3 {
+        font-size: 12px;
+        font-weight: 200;
+    }
+    .wallet-balance > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .wallet-container {
+        padding: 4% 4%;
+        background-color: rgba(254, 136, 28, 0.1);
+        border-radius: 16px;
+    }
+    .wallet-balance > div > .token-text-container span {
+        color: white;
+        font-size: 32px;
+    }
+    .wallet-balance > div:nth-child(2) {
+        align-items: flex-end;
+    }
+    .wallet-balance h3 > span:first-of-type {
+        font-size: 24px;
+        font-weight: 200;
+    }
+    .wallet-balance p {
+        font-weight: 200;
+    }
+    .wallet-exchange-rate {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5%;
+    }
+    .wallet-exchange-rate h4 {
+        font-size: 12px;
+        font-weight: 200;
+    }
+    .wallet-exchange-rate h4:first-of-type {
+        margin-right: 2.5%;
+    }
+    .wallet-exchange-rate h4:last-of-type {
+        margin-left: 2.5%;
+    }
+    .wallet-income {
+        padding: 5% 4%;
+    }
+    .wallet-income > div:first-of-type {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 3%;
+    }
+    .wallet-income > div {
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 0;
+    }
+    .wallet-income > div h3, h4 {
+        font-weight: 200;
+        font-size: 16px;
+    }
+    .wallet-income > div h3 {
+        font-size: 12px;
+    }
+    .wallet-icon-nav {
+        margin-top: 3%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .wallet-icon-nav > div {
+        background-color: rgba(254, 136, 28, 0.1);
+        border: 0.5px solid rgba(255, 255, 255, 0.04);
+        border-radius: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: inset 0px 4px 4px 0px rgba(255, 255, 255, 0.1);
+        padding: 3% 8%;
+    }
+    .image-container-wallet {
+        background: linear-gradient(135deg, #FFBA34 0%, #FE881C 100%);
+        border: 1px solid white;
+        border-radius: 8px;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wallet-icon-nav h2 {
+        font-weight: 200;
+        font-size: 14px;
+        margin-bottom: 0;
     }
 }
 

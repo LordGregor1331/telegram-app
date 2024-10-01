@@ -1,0 +1,55 @@
+    <section class="section active" id="wallet-page">
+        <nav>
+            <ul class="wallet-navigation">
+                <li class="wallet-navpoint wallet-navpoint-active balsamiq" >Overview</li>
+                <li class="wallet-navpoint balsamiq" >Storage</li>
+                <li class="wallet-navpoint balsamiq" >Referal</li>
+            </ul>
+        </nav>
+        <main class="main active-main">
+            <div>
+                <div class="wallet-container wallet-balance">
+                    <div>
+                        <h3 class="balsamiq">Total Balance</h3><img src="../static/img/transaction-history.png" alt="">
+                    </div>
+                    <div>
+                        <div class="token-text-container">
+                            <img src="/static/img/token.png" alt="">
+                            <span class="balsamiq">8000</span>
+                        </div>
+                        <p class="balsamiq">~ 459 $</p>
+                    </div>
+                    <h3 class="balsamiq">Today &nbsp; <span>&uarr;</span><span>&nbsp; 342, 342</span></h3>
+                </div>
+                <div class="wallet-container wallet-exchange-rate">
+                    <h4 class="balsamiq">1, 500 eggs = 1 token</h4><h4 class="balsamiq">746378 token = 3 тон</h4>
+                </div>
+                <div class="wallet-container wallet-income">
+                    <div><h3 class="balsamiq">Storage</h3><h4 class="balsamiq">507, 981,000</h4></div>
+                    <div><h3 class="balsamiq">Referal</h3><h4 class="balsamiq">507, 981,000</h4></div>
+                </div>
+            </div>
+        </main>
+        <div class="wallet-icon-nav">
+            <div>
+                <div class="image-container-wallet"><img src="../static/img/deposit.png" alt=""></div>
+                <h2 class="balsamiq">Deposit</h2>
+            </div>
+            <div>
+                <div class="image-container-wallet"><img src="../static/img/withdraw.png" alt=""></div>
+                <h2 class="balsamiq">Deposit</h2>
+            </div>
+            <div>
+                <div class="image-container-wallet"><img src="../static/img/Exchange.png" alt=""></div>
+                <h2 class="balsamiq">Deposit</h2>
+            </div>
+            
+        </div>
+        <footer class="footer tap-bar">
+            <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
+            <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
+            <div class="footer-nav" id="main-button"><img src="{{ url_for('static', filename='img/eggmine.png') }}" alt=""> <h4 class="balsamiq">Main</h4></div>
+            <div class="footer-nav" id="earn-button"><img src="{{ url_for('static', filename='img/cash.png') }}" alt=""> <h4 class="balsamiq">Earn</h4></div>
+            <div class="footer-nav" id="wallet-button"><img src="{{ url_for('static', filename='img/wallet.png') }}" alt=""> <h4 class="balsamiq">Wallet</h4></div>
+        </footer>
+    </section>
