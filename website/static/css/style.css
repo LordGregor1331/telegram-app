@@ -1319,7 +1319,7 @@
         font-size: 12px;
     }
     .wallet-icon-nav {
-        margin-top: 3%;
+        margin-top: 5%;
         display: flex;
         justify-content: space-between;
     }
@@ -1347,6 +1347,37 @@
         font-weight: 200;
         font-size: 14px;
         margin-bottom: 0;
+    }
+    #wallet-storage-content {
+        display: none;
+    }
+    #wallet-referal-content ul {
+        padding: 0;
+        margin: 0;
+    }
+    #wallet-referal-content li {
+        list-style-type: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2% 0;
+    }
+    #wallet-referal-content span {
+        color: white;
+        font-size: 16px;
+    }
+    #wallet-referal-content li > .token-text-container {
+        margin-top: 0;
+    }
+    #wallet-referal-content h3 {
+        font-size: 12px;
+        font-weight: 200;
+    }
+    #wallet-referal-content {
+        height: 33vh;
+        overflow-y: scroll;
+        display: none; 
     }
 }
 

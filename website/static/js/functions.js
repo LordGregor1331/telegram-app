@@ -231,3 +231,39 @@ document.addEventListener('DOMContentLoaded', function() {
         this.classList.add('buy-nft-switch-active');
     });
 });
+
+//navpoint for wallet-page
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для каждого элемента навигации
+    function handleNavigationClick(navId, containerId) {
+        // Скрываем все блоки с классом .wallet-income внутри <main>
+        document.querySelectorAll('.wallet-income').forEach(container => {
+            container.style.display = 'none';
+        });
+
+        // Показываем только выбранный блок с классом .wallet-income
+        const targetContainer = document.getElementById(containerId);
+        if (targetContainer) {
+            targetContainer.style.display = 'block';
+        }
+
+        // Переключаем активный класс для навигации
+        document.querySelector('.wallet-navpoint-active').classList.remove('wallet-navpoint-active');
+        document.getElementById(navId).classList.add('wallet-navpoint-active');
+    }
+
+    // Клик на "Overview"
+    document.getElementById('overview-nav').addEventListener('click', function() {
+        handleNavigationClick('overview-nav', 'wallet-general-content');
+    });
+
+    // Клик на "Storage"
+    document.getElementById('storage-nav').addEventListener('click', function() {
+        handleNavigationClick('storage-nav', 'wallet-storage-content');
+    });
+
+    // Клик на "Referal"
+    document.getElementById('referal-nav').addEventListener('click', function() {
+        handleNavigationClick('referal-nav', 'wallet-referal-content');
+    });
+});
