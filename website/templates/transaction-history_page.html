@@ -1,0 +1,63 @@
+<section class="section  active" id="transaction-history-page">
+    <header>
+        <h2 class="balsamiq">Transaction History</h2>
+        <nav>
+            <h3 class="balsamiq switch transaction-history-switch  transaction-history-switch-active">Deposit</h3>
+            <h3 class="balsamiq switch transaction-history-switch">Withdraw</h3>
+            <h3 class="balsamiq switch transaction-history-switch">Exchange</h3>
+        </nav>
+    </header>
+    <main class="main active-main">
+        <div class="transaction-history-deposit-container transaction-history-general  transaction-history-general-active">
+            <ul>
+                <li>
+                    <div class="transaction-history-deposit-option">
+                        <div>
+                            <h2 class="balsamiq">TON</h2>
+                            <p class="balsamiq">20-03-2024, 18:00</p>
+                        </div>
+                        <h3 class="balsamiq">+ 507, 981,000</h3>
+                    </div>
+                    <div>
+                        <div class="balsamiq transaction-status">Processing</div>
+                        <div class="transaction-income">
+                            <div class="token-text-container">
+                                <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                <span class="roboto">+3485</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="transaction-history-general transaction-history-withdraw-container">
+            <ul>
+                <li>
+                    <div class="transaction-history-deposit-option">
+                        <div>
+                            <h2 class="balsamiq">TON</h2>
+                            <p class="balsamiq">20-03-2024, 18:00</p>
+                        </div>
+                        <h3 class="balsamiq">+ 507, 981,000</h3>
+                    </div>
+                    <div>
+                        <div class="balsamiq transaction-status">Processing</div>
+                        <div class="transaction-outcome">
+                            <div class="token-text-container">
+                                <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                <span class="roboto">+3485</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer class="footer tap-bar">
+        <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
+        <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
+        <div class="footer-nav" id="main-button"><img src="{{ url_for('static', filename='img/eggmine.png') }}" alt=""> <h4 class="balsamiq">Main</h4></div>
+        <div class="footer-nav" id="earn-button"><img src="{{ url_for('static', filename='img/cash.png') }}" alt=""> <h4 class="balsamiq">Earn</h4></div>
+        <div class="footer-nav" id="wallet-button"><img src="{{ url_for('static', filename='img/wallet.png') }}" alt=""> <h4 class="balsamiq">Wallet</h4></div>
+    </footer>
+</section>

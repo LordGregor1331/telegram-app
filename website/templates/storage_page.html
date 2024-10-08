@@ -1,4 +1,6 @@
     <section class="section" id="storage-page">
+        <div class="storage-page-gradient"></div>
+        <div class="storage-page-gradient-2nd"></div>
         <header>
             <nav class="storage-nav">
                 <div class="storage-navpoint" id="egg-navpoint">
@@ -47,23 +49,32 @@
         </header>
         <main>
             <div class="energy-switch">
-                <span href="" class="balsamiq" id="energy-switch-energy">Energy</span>
-                <span href="" class="balsamiq  storage-switch-active" id="energy-switch-chicken">Chicken</span>
+                <span href="" class="balsamiq storage-switch-active" id="energy-switch-energy">Energy</span>
+                <span href="" class="balsamiq" id="energy-switch-chicken">Chicken</span>
             </div>
             <div>
-                <div class="energy-switch-switcher" id="buy-energy-section">
+                <div class="energy-switch-switcher energy-switch-switcher-active buy-energy-container" id="buy-energy-section">
                     <div class="boost-string-container">
                         <li><div><img src="{{ url_for('static', filename='img/energy-upgrade.png') }}" alt=""><h4 class="balsamiq">Buy more energy</h4></div><div><h4 class="balsamiq">64.567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
+                        <div class="energy-boost energy-flat-container">
+                            <div>
+                                <img src="../static/img/energy-upgrade.png" alt="">
+                                <div class="energy-flat-input-container"><input type="number" max="1000" id="energy-flat-input" placeholder="Type amount of energy"></div>
+                                <h3 class="balsamiq">Max 1000</h3>
+                            </div>
+                        </div>
+                        <div class="energy-boost energy-cost-container">
+                            <div class="token-text-container"><img src="../static/img/token.png" alt=""><span class="balsamiq">55905</span></div>
+                            <div class="balsamiq">Buy &nbsp; <img src="../static/img/point no bg.png" alt=""></div>
+                        </div>
                         <div class="boost-string"></div>
                         <li><div><img src="{{ url_for('static', filename='img/buy-corn.png') }}" alt=""><h4 class="balsamiq">Boost energy limit</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
                         <li><div><img src="{{ url_for('static', filename='img/raise-balance.png') }}" alt=""><h4 class="balsamiq">Energy per tap</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
                         <div class="boost-string"></div>
                         <li><div><img src="{{ url_for('static', filename='img/autoenergy.png') }}" alt=""><h4 class="balsamiq">Autoclick</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
                     </div>
-                    <div>
-                    </div>
                 </div>
-                <div class="energy-switch-switcher energy-switch-switcher-active" id="buy-chicken-section">
+                <div class="energy-switch-switcher" id="buy-chicken-section">
                     <nav>
                         <h4 class="balsamiq" id="my-chickens">My chickens</h4>
                         <h4 class="balsamiq chicken-market-switch-active" id="chickens-market">Chicken market</h4>

@@ -269,12 +269,31 @@
         margin-top: 2%;
     }
     #storage-page {
-        background-image: url(../img/storage-bg.png);
+        background-image: url(../img/c1fc20933dd6265e0c9f0cec8ddc7a6d.jfif);
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         padding: 5% 0;
         position: relative;
+    }
+    .storage-page-gradient {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to bottom, rgba(65, 40, 16, 0) 50%, rgba(65, 40, 16, 1) 100%);
+        height: 50vh;
+    }
+    .storage-page-gradient-2nd {
+        position: absolute;
+        content: '';
+        top: 49vh;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(65, 40, 16, 1);
     }
     .storage-nav {
         display: flex;
@@ -549,6 +568,7 @@
         width: 43%;
         position: relative;
         padding: 4% 3%;
+        height: 17vh;
     }
     /* .products li::before {
         content: '';
@@ -568,7 +588,7 @@
         position: absolute;
     }
     .market-buy-container {
-        margin-top: 60%;
+        margin-top: auto;
         z-index: 2;
         width: 100%;
         justify-content: space-between;
@@ -598,6 +618,7 @@
     #storage-page footer {
         position: relative;
         z-index: 2;
+        margin: 0 5%;
     }
     .chicken-market {
         display: none
@@ -1247,7 +1268,7 @@
     .nftmarket-active {
         display: block;
     }
-    #wallet-page {
+    #wallet-page, #transaction-history-page, #withdraw-page, #deposit-page {
         background-color: #412810;
     }
     .wallet-navigation {
@@ -1378,6 +1399,180 @@
         height: 33vh;
         overflow-y: scroll;
         display: none; 
+    }
+    #transaction-history-page > header > h2 {
+        font-size: 24px;
+        font-weight: 300;
+        text-align: center;
+    }
+    #transaction-history-page > header > nav {
+        display: flex;
+        justify-content: space-around;
+    }
+    .transaction-history-switch {
+        color: white;
+        opacity: 0.6;
+        font-weight: 200;
+        font-size: 14px;
+        width: 50%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        padding: 1% 0;
+    }
+    .transaction-history-switch-active {
+        opacity: 1;
+    }
+    .transaction-history-general > ul {
+        margin: 0;
+        padding: 0;
+    }
+    .transaction-history-general > ul > li {
+        list-style-type: none;
+        padding: 2% 0%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .transaction-history-deposit-option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .transaction-history-deposit-option h2 {
+        margin: 0;
+        font-weight: 200;
+        margin-bottom: 2%;
+        font-size: 16px;
+    }
+    .transaction-history-deposit-option p {
+        font-weight: 200;
+        font-size: 10px;
+    }
+    .transaction-history-deposit-option h3 {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 16px;
+        font-weight: 200;
+    }
+    .transaction-history-general li > div:last-of-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3%;
+    }
+    .transaction-history-general .token-text-container {
+        margin-top: 0;
+    }
+    .transaction-status {
+        font-size: 12px;
+        font-weight: 300;
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 2% 2%;
+        border-radius: 4px;
+    }
+    .transaction-outcome span {
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+    .transaction-outcome img {
+        width: 25px;
+        height: 25px;
+    }
+    .transaction-income img {
+        width: 25px;
+        height: 25px;
+    }
+    .transaction-income span {
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+    .transaction-income {
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 1.5% 2%;
+        border-radius: 4px;
+        width: 20%;
+    }
+    .transaction-history-general {
+        background-color: rgba(254, 136, 28, 0.1);
+        border-radius: 16px;
+        padding: 5% 5%;
+        margin-top: 5%;
+        height: 67vh;
+        overflow-y: scroll;
+        display: none;
+    }
+    .transaction-history-general-active {
+        display: block;
+    }
+    .buy-energy-container {
+        height: 58vh;
+        overflow-y: scroll;
+    }
+    .energy-boost {
+        background: #412810;
+        padding: 4% 4%;
+        border-radius: 16px;
+        box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+        width: 90%;
+        z-index: 2;
+        position: relative;
+    }
+    .energy-switch-switcher li:first-of-type {
+        margin-bottom: 1%;
+    }
+    .energy-flat-container > div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #energy-flat-input {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: unset;
+        border-radius: 16px;
+        padding: 2%;
+        font-family: 'Balsamiq Sans';
+        color: white;
+        width: 100%;
+        font-weight: 200;
+        font-size: 18px;
+    }
+    .energy-flat-input-container {
+        padding: 0 3%;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        height: 30px;
+        display: flex;
+        align-items: center;
+        width: 60%;
+    }
+    .energy-flat-container h3 {
+        font-size: 12px;
+        opacity: 0.6;
+    }
+    .energy-cost-container {
+        border-radius: 0;
+        box-shadow: unset;
+        position: relative;
+        top: -12px;
+        z-index: 1;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 7%;
+    }
+    .energy-cost-container > div:last-of-type {
+        background: linear-gradient(135deg, #FD902B 0%, #FFBA34 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: 2% 3%;
+    }
+    .energy-cost-container .token-text-container {
+        margin-top: 0;
+    }
+    .energy-cost-container span {
+        color: white;
+        font-size: 24px;
     }
 }
 
