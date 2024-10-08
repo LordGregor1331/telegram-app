@@ -267,3 +267,127 @@ document.addEventListener('DOMContentLoaded', function() {
         handleNavigationClick('referal-nav', 'wallet-referal-content');
     });
 });
+
+//deposit_page.html
+//open list 
+document.addEventListener('DOMContentLoaded', function() {
+    // Выбираем все элементы с классами USDT, TON и FIAT
+    document.querySelectorAll('.USDT-deposit-details, .TON-deposit-details, .FIAT-deposit-details').forEach(function(detailButton) {
+        detailButton.addEventListener('click', function() {
+            // Находим контент и стрелку внутри текущего блока
+            var content = this.nextElementSibling; // Предполагаем, что content находится сразу после кнопки
+            var arrow = this.querySelector('.arrow'); // Находим стрелку внутри нажатой кнопки
+
+            // Проверяем, открыт ли контент
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                arrow.classList.remove('open');
+            } else {
+                content.classList.add('open');
+                arrow.classList.add('open');
+            }
+        });
+    });
+});
+
+//ton usdt navigation
+document.querySelector('#USDT').addEventListener('click', function() {
+    document.getElementById('TON-deposit').classList.remove('active-main');
+    document.getElementById('USDT-deposit').classList.add('active-main');
+    document.getElementById('USDT').classList.add('currency-type-active');
+    document.getElementById('TON').classList.remove('currency-type-active');
+});
+
+document.querySelector('#TON').addEventListener('click', function() {
+    document.getElementById('USDT-deposit').classList.remove('active-main');
+    document.getElementById('TON-deposit').classList.add('active-main');
+    document.getElementById('TON').classList.add('currency-type-active');
+    document.getElementById('USDT').classList.remove('currency-type-active');
+});
+
+//crypto fiat navigation
+document.getElementById('fiat').addEventListener('click', function () {
+    document.getElementById('fiat-deposit').classList.add('active-main')
+    document.getElementById('crypto-deposit').classList.remove('active-main')
+    document.getElementById('fiat').classList.add('deposit-navpoint-active')
+    document.getElementById('crypto').classList.remove('deposit-navpoint-active')
+})
+document.getElementById('crypto').addEventListener('click', function() {
+    document.getElementById('crypto-deposit').classList.add('active-main')
+    document.getElementById('fiat-deposit').classList.remove('active-main')
+    document.getElementById('fiat').classList.remove('deposit-navpoint-active')
+    document.getElementById('crypto').classList.add('deposit-navpoint-active')
+})
+
+//currency switch with API
+document.addEventListener('DOMContentLoaded', function() {
+    const currencySymbols = {
+        USD: '$',
+        EUR: '€',
+        UAH: '₴',
+        RUB: '₽'
+    };
+
+    const currencyNames = {
+        USD: 'USD',
+        EUR: 'EUR',
+        UAH: 'UAH',
+        RUB: 'RUB'
+    };
+
+    async function getExchangeRate(currency) {
+        const response = await fetch(`https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=${currency.toLowerCase()}`);
+        const data = await response.json();
+        return data.tether[currency.toLowerCase()];
+    }
+
+    async function updateCurrency(currency) {
+        const currencySwitch = document.querySelector('.currency-type-switch');
+        const currencyIcon = document.querySelector('.currency-type-switch-icon');
+        const currencyNumb = document.querySelector('.currency-type-switch-numb');
+        
+        if (currencySwitch && currencyIcon && currencyNumb) {
+            currencySwitch.classList.add('hidden');
+            currencyIcon.classList.add('hidden');
+            currencyNumb.classList.add('hidden');
+
+            const exchangeRate = await getExchangeRate(currency);
+
+            setTimeout(function() {
+                currencySwitch.textContent = currencyNames[currency];
+                currencyIcon.textContent = currencySymbols[currency];
+                currencyNumb.textContent =  (exchangeRate * 7).toFixed(2);
+
+                currencySwitch.classList.remove('hidden');
+                currencyIcon.classList.remove('hidden');
+                currencyNumb.classList.remove('hidden');
+            }, 500);
+        } else {
+            console.error("Элементы .currency-type-switch, .currency-type-switch-icon или .currency-type-switch-numb не найдены.");
+        }
+    }
+
+    updateCurrency('USD');
+
+    document.querySelectorAll('.currency-type').forEach(button => {
+        button.addEventListener('click', function() {
+            document.querySelectorAll('.currency-type').forEach(btn => btn.classList.remove('currency-type-active'));
+            
+            this.classList.add('currency-type-active');
+            
+            updateCurrency(this.id);
+        });
+    });
+});
+
+//transaction-history-show
+document.getElementById('transaction-history-switcher').addEventListener('click', function () {
+    document.getElementById('wallet-page').classList.remove('active')
+    document.getElementById('transaction-history-page').classList.add('active')
+})
+
+//deposit-page-switcher 
+document.getElementById('deposit-page-switcher').addEventListener('click', function() {
+    document.getElementById('wallet-page').classList.remove('active')
+    document.getElementById('deposit-page').classList.add('active')
+})

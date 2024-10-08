@@ -29,11 +29,12 @@
     }
     .section {
         padding: 5% 5%;
-        height: 100vh;
+        height: 96vh;
         display: none;
     }
     .active {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     .main-page-nav {
         display: flex;
@@ -257,6 +258,7 @@
         padding: 3% 3%;
         display: flex;
         justify-content: space-around;
+        margin-top: auto;
     }
     .footer-nav {
         display: flex;
@@ -1132,7 +1134,7 @@
         color: white;
         font-size: 18px;
     }
-    .nft-navigation, .wallet-navigation {
+    .nft-navigation, .wallet-navigation, .deposit-navigation {
         background: linear-gradient(to bottom, #E06B14, #FD902B);
         display: flex;
         justify-content: space-between;
@@ -1141,13 +1143,13 @@
         padding: 1% 1%;
         box-shadow: inset 0px 1px 2px 0px rgba(255, 255, 255, 0.25), 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
     }
-    .nft-navpoint, .wallet-navpoint {
+    .nft-navpoint, .wallet-navpoint, .deposit-navpoint {
         list-style-type: none;
         padding: 0;
         width: 50%;
         text-align: center;
     }
-    .nft-navpoint-active, .wallet-navpoint-active {
+    .nft-navpoint-active, .wallet-navpoint-active, .deposit-navpoint-active {
         background: linear-gradient(to bottom, #FFBA34, #FE881C);
         border: 1px solid #FFFFFF;
         border-radius: 20px;
@@ -1573,6 +1575,199 @@
     .energy-cost-container span {
         color: white;
         font-size: 24px;
+    }
+    #deposit-page > h2 {
+        text-align: center;
+        margin-bottom: 7%;
+        font-weight: 200;
+    }
+    .currency-type-active {
+        box-shadow: inset 0px 4px 4px 0px rgba(255, 255, 255, 0.1), 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    }
+    .currency-type-container {
+        margin-bottom: 5%;
+    }
+    .currency-type {
+        background-color: rgba(254, 136, 28, 0.1);
+        border: none;
+        font-size: 14px;
+        border-radius: 4px;
+        padding: 1%;
+        margin-right: 3%;
+    }
+    #USDT-deposit > div:first-of-type, .details-content > div:first-of-type, #TON-deposit > div:first-of-type, .details-content > div:first-of-typeб
+    #USD-deposit > div:first-of-type, .details-content > div:first-of-type {
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 4%;
+        margin-top: 2%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #USDT-deposit > h4, .details-content > h4, #TON-deposit > h4, #USD-deposit > h4{
+        margin-left: 2%;
+        font-weight: 100;
+    }
+    #USDT-deposit > div, #TON-deposit > div, #USD-deposit > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 12px;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+    }
+    #USDT-deposit > div:first-of-type, #TON-deposit > div:first-of-type, #USD-deposit > div:first-of-type {
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 3%;
+        margin-top: 3%;
+    }
+    #USDT-deposit > div:first-of-type > h3, #TON-deposit > div:first-of-type > img, #USD-deposit > div:first-of-type > h3{
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        padding-right: 5%;
+    }
+    .money-income {
+        padding-right: 35%;
+        font-size: 18px;
+    }
+    #USDT-deposit > div:nth-child(3) > p, #TON-deposit > div:nth-child(3) > p, #USD-deposit > div:nth-child(3) > p {
+        font-size: 12px;
+        font-weight: 100;
+    }
+    .USDT-deposit-details-container, .TON-deposit-details-container, .FIAT-deposit-details-container {
+        flex-direction: column;
+        display: flex !important;
+        align-items: flex-start !important;
+    }
+    .USDT-deposit-details, .TON-deposit-details, .FIAT-deposit-details  {
+        font-size: 12px;
+    }
+    .USDT-deposit-details,.TON-deposit-details, .FIAT-deposit-details {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .arrow {
+        width: 0;
+        height: 0;
+        margin-left: 10px;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        transition: transform 0.3s ease;
+        color: white;
+    }
+    
+    .arrow-down {
+        border-top: 5px solid white; /* Стрелка вниз */
+    }
+    
+    .arrow-up {
+        border-bottom: 5px solid white; /* Стрелка вверх */
+    }
+    .details-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        font-size: 14px;
+        font-family: Arial, sans-serif;
+        margin-top: 5px;
+        width: 100%;
+    }
+    .details-content > div {
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 3%;
+        margin-top: 3%;
+    }
+    .details-content.open {
+       max-height: 500px; /* Задайте достаточно большое значение для раскрытия */
+    }
+    .arrow.open {
+        transform: rotate(180deg); /* Поворот стрелки при раскрытии */
+    }
+    .details-content > div:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 12px;
+        align-items: center;
+    }
+    .details-content > div:first-of-type > img {
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        padding-right: 5%;
+    }
+    .details-content > div:first-of-type > .money-income {
+        padding-right: 60%;
+    }
+    .calc-address-container {
+        flex-direction: column;
+        align-items: flex-start !important;
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 4%;
+        border-radius: 12px;
+        margin-top: 7%;
+    }
+    .calc-address-option h3 {
+        font-size: 14px;
+        font-weight: 200;
+        margin-bottom: 3%;
+    }
+    .calc-address-option {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+    }
+    .calc-address-option:last-of-type {
+        padding-top: 3%;
+    }
+    .calc-address-option h3:last-of-type {
+        opacity: 0.7;
+    }
+    .calc-address-option > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .calc-address-option > div > h3:first-of-type {
+        opacity: 1;
+    }
+    .confirm-timer {
+        margin-top: 5%;
+    }
+    .confirm-button {
+        background: linear-gradient(135deg, #FFBA34 0%, #FE881C 100%);
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        padding: 5% 5%;
+        box-shadow: 0px 5px 7px 0px rgba(40, 19, 0, 0.4), inset 0px -3px 3px 0px rgba(0, 0, 0, 0.4), inset 0px 3px 3px 0px rgba(255, 255, 255, 0.4);
+        width: 60%;
+    }
+    .confirm-timer > div {
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .confirm-timer > div > div {
+        display: flex;
+        align-items: center;
+    }
+    .confirm-timer > div > div > img {
+        margin-right: 4%;
+    }
+    .currency-type-switch, .currency-type-switch-icon {
+        transition: opacity 0.5s ease;
+        opacity: 1;
+    }
+    
+    .hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    .currency-rate > p{
+        display: flex;
+        align-items: center;
+    }
+    .currency-rate img {
+        width: 15px;
     }
 }
 
