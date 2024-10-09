@@ -7,4 +7,65 @@
     .storage img {
         width: 90%;
     }
+    .energy-upgrade-container {
+        margin-top: 0;
+    }
+    .section {
+        padding: 2% 5%;
+        height: 100vh;
+        
+    }
+    .buy-chicken {
+        margin-top: 2%;
+    }
+    footer {
+        margin-bottom: 4%;
+    }
+    .image-container-text {
+        position: relative;
+        left: -25px;
+        top: -30px;
+    }
+    #earn-page > main > h4 {
+        margin: 1% 0;
+    }
+    .popup-join-social {
+        top: -235px;
+    }
+    .task-container {
+        padding: 2% 1%;
+    }
+    #earn-page-maincontent > img {
+        width: 95%;
+    }
+    .token-balance {
+        margin-top: 2%;
+    }
+    .token-text-container {
+        margin-top: 1%;
+    }
+    .nft-navigation {
+        margin: 1% 0;
+    }
+    .nftmarket {
+        margin-top: 2%;
+    }
+    .nft-collection {
+        height: 43vh;
+    }
+    .energy-switch-switcher li div:nth-child(2) {
+        width: unset;
+    }
+    .energy-switch {
+        margin: 2% 0;
+    }
+    .transaction-history-general {
+        height: 60vh;
+    }
+    .withdraw-input input {
+        margin-right: 20%;
+    }
+    .wallet-icon-nav > div {
+        padding: 2% 6%;
+    }
 }

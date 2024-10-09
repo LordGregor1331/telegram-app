@@ -4,24 +4,37 @@ const sections = document.querySelectorAll('.section');
 
 // Function to handle navigation
 function handleNavigation(event) {
-    // Remove 'active' class from all sections
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
+    const targetId = event.currentTarget.id;
+    const targetSection = document.getElementById(targetId.replace('-button', '-page'));
 
-    // Remove 'active' class from all footer buttons
+    // Найти активную секцию
+    const activeSection = document.querySelector('.section.active');
+
+    if (activeSection) {
+        // Показать новую секцию сразу же
+        targetSection.style.display = 'flex';
+        targetSection.style.animation = 'slide-in-right 0.2s forwards';
+        targetSection.classList.add('active');
+
+        // Анимация для активной секции, чтобы она ушла влево
+        activeSection.style.animation = 'slide-out-left 0.2s forwards';
+        
+        // После завершения анимации скрыть старую секцию
+        setTimeout(() => {
+            activeSection.classList.remove('active');
+            activeSection.style.display = 'none'; // Скрыть после анимации
+        }, 500); // 500ms совпадает с продолжительностью анимации
+    } else {
+        // Если активной секции нет (первая загрузка)
+        targetSection.style.display = 'block';
+        targetSection.style.animation = 'slide-in-right 0.2s forwards';
+        targetSection.classList.add('active');
+    }
+
+    // Обновить классы на кнопках
     footerButtons.forEach(button => {
         button.classList.remove('active');
     });
-
-    // Get the ID of the clicked button
-    const targetId = event.currentTarget.id;
-
-    // Find the corresponding section
-    const targetSection = document.getElementById(targetId.replace('-button', '-page'));
-
-    // Add 'active' class to the target section and button
-    targetSection.classList.add('active');
     event.currentTarget.classList.add('active');
 }
 
@@ -391,3 +404,48 @@ document.getElementById('deposit-page-switcher').addEventListener('click', funct
     document.getElementById('wallet-page').classList.remove('active')
     document.getElementById('deposit-page').classList.add('active')
 })
+
+//withdraw-page popup show
+document.addEventListener('DOMContentLoaded', function() {
+    const withdrawButton = document.querySelector('.submit');
+    const popup = document.getElementById('withdraw-popup');
+    const mainSection = document.getElementById('withdraw-address');
+
+    function showPopup() {
+        // Скрыть основную секцию
+        mainSection.classList.add('hide');
+        mainSection.classList.remove('show');
+
+        // Показать попап
+        popup.classList.add('show');
+        popup.classList.remove('hide');
+
+        // Через 10 секунд скрыть попап и показать основную секцию
+        setTimeout(hidePopup, 5000);
+    }
+
+    function hidePopup() {
+        // Скрыть попап
+        popup.classList.add('hide');
+        popup.classList.remove('show');
+
+        // Показать основную секцию
+        mainSection.classList.add('show');
+        mainSection.classList.remove('hide');
+    }
+
+    // Событие клика по кнопке "Withdraw"
+    withdrawButton.addEventListener('click', function() {
+        showPopup();
+    });
+
+    // Событие клика по любому месту на экране
+    document.addEventListener('click', function(e) {
+        if (e.target !== withdrawButton) {
+            showPopup();
+        }
+    });
+
+    // Скрыть попап немедленно при клике на попап
+    popup.addEventListener('click', hidePopup);
+});

@@ -31,11 +31,37 @@
         padding: 5% 5%;
         height: 96vh;
         display: none;
+        position: relative;
+        transition: all 0.1s ease;
     }
     .active {
         display: flex;
         flex-direction: column;
+        animation: slide-in-right 0.1s forwards;
     }
+    /* Анимация для скрытия секции (уход влево) */
+@keyframes slide-out-left {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+/* Анимация для появления секции (выплывание справа) */
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
     .main-page-nav {
         display: flex;
         justify-content: center;
@@ -621,6 +647,7 @@
         position: relative;
         z-index: 2;
         margin: 0 5%;
+        margin-top: auto;
     }
     .chicken-market {
         display: none
@@ -763,7 +790,7 @@
     }
     #earn-page {
         background: linear-gradient(to bottom, #4D331C, #381E07);
-        padding-top: 0;
+        padding-top: 5%;
         padding-right: 0;
     }
     #earn-page h4 {
@@ -1576,7 +1603,7 @@
         color: white;
         font-size: 24px;
     }
-    #deposit-page > h2 {
+    #deposit-page > h2, #withdraw-page > h2 {
         text-align: center;
         margin-bottom: 7%;
         font-weight: 200;
@@ -1768,6 +1795,98 @@
     }
     .currency-rate img {
         width: 15px;
+    }
+    .withdraw-input {
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 4% 6%;
+        margin-top: 3%;
+        display: flex;
+        align-items: center;
+        border-radius: 12px;
+        margin-bottom: 2%;
+    }
+    .withdraw-input img:first-of-type {
+        padding-right: 5%;
+        border-right: 2px solid rgba(255, 255, 255, 0.5);
+        margin-right: 5%;
+    }
+    .withdraw-input img:last-of-type {
+        padding-left: 5%;
+        border-left: 2px solid rgba(255, 255, 255, 0.5);
+    }
+    .withdraw-input input {
+        margin-right: 27%;
+    }
+    .withdraw-info {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 2%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        align-items: center;
+        border-radius: 12px;
+        margin-bottom: 2%;
+    }
+    #withdraw-address > div {
+        display: flex;
+        justify-content: space-between;
+        background-color: rgba(254, 136, 28, 0.1);
+        padding: 4% 6%;
+        margin-top: 2%;
+        margin-bottom: 3%;
+        border-radius: 12px;
+    }
+    .withdraw-get-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3%;
+    }
+    .submit {
+        background: linear-gradient(135deg, #FFBA34 0%, #FE881C 100%);
+        border: none;
+        border-radius: 8px;
+        font-size: 18px;
+        padding: 5% 5%;
+        box-shadow: 0px 5px 7px 0px rgba(40, 19, 0, 0.4), inset 0px -3px 3px 0px rgba(0, 0, 0, 0.4), inset 0px 3px 3px 0px rgba(255, 255, 255, 0.4);
+        width: 50%;
+    }
+    #withdraw-page {
+        position: relative;
+    }
+    #withdraw-popup {
+        background: linear-gradient(135deg, #FFBA34 0%, #FE881C 100%);
+        flex-direction: column;
+        width: 60%;
+        height: fit-content;
+        border-radius: 24px;
+        border: 1px solid white;
+        justify-content: space-between;
+        padding: 3% 15%;
+        align-items: center;
+        margin-top: 3%;
+        display: flex;
+        transition: opacity 1s ease;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 30%;
+    }
+    .popup.show {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    #withdraw-address {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+    #withdraw-address.hide {
+        opacity: 0;
+        display: none;
+    }
+    #withdraw-address.show {
+        display: block;
+        opacity: 1;
     }
 }
 
