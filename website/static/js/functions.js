@@ -11,25 +11,15 @@ function handleNavigation(event) {
     const activeSection = document.querySelector('.section.active');
 
     if (activeSection) {
-        // Показать новую секцию сразу же
-        targetSection.style.display = 'flex';
-        targetSection.style.animation = 'slide-in-right 0.2s forwards';
-        targetSection.classList.add('active');
-
-        // Анимация для активной секции, чтобы она ушла влево
-        activeSection.style.animation = 'slide-out-left 0.2s forwards';
-        
-        // После завершения анимации скрыть старую секцию
-        setTimeout(() => {
-            activeSection.classList.remove('active');
-            activeSection.style.display = 'none'; // Скрыть после анимации
-        }, 500); // 500ms совпадает с продолжительностью анимации
-    } else {
-        // Если активной секции нет (первая загрузка)
-        targetSection.style.display = 'block';
-        targetSection.style.animation = 'slide-in-right 0.2s forwards';
-        targetSection.classList.add('active');
+        // Текущая секция просто скрывается без анимации
+        activeSection.classList.remove('active');
+        activeSection.style.display = 'none'; // Скрыть текущую секцию
     }
+
+    // Показать новую секцию
+    targetSection.style.display = 'flex'; // Показать новую секцию
+    targetSection.classList.add('active');
+    targetSection.style.animation = 'fade-in 0.5s forwards';
 
     // Обновить классы на кнопках
     footerButtons.forEach(button => {

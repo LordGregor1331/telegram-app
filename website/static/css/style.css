@@ -2,6 +2,7 @@
     body {
         margin: 0;
         padding: 0;
+        background-color: #412810;
     }
     input[type=number]::-webkit-outer-spin-button,
     input[type=number]::-webkit-inner-spin-button {
@@ -32,36 +33,23 @@
         height: 96vh;
         display: none;
         position: relative;
-        transition: all 0.1s ease;
+        transition: opacity 0.1s ease;
     }
     .active {
         display: flex;
         flex-direction: column;
-        animation: slide-in-right 0.1s forwards;
+        animation: fade-in 0.1s forwards;;
     }
-    /* Анимация для скрытия секции (уход влево) */
-@keyframes slide-out-left {
-    0% {
-        transform: translateX(0);
-        opacity: 1;
+   
+    /* Анимация для появления секции (появление) */
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
     }
-    100% {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-}
-
-/* Анимация для появления секции (выплывание справа) */
-@keyframes slide-in-right {
-    0% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
     .main-page-nav {
         display: flex;
         justify-content: center;
