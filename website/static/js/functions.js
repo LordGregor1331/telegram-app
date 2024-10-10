@@ -439,3 +439,71 @@ document.addEventListener('DOMContentLoaded', function() {
     // Скрыть попап немедленно при клике на попап
     popup.addEventListener('click', hidePopup);
 });
+
+//energy input on storage-page.html
+const energyInput = document.getElementById('energy-input');
+const energyCost = document.getElementById('energy-cost');
+function calculateEnergyCost() {
+    const energyAmount = parseInt(energyInput.value) || 0;  
+    const tokenCost = energyAmount * 27;  
+    energyCost.textContent = tokenCost;  
+}
+energyInput.addEventListener('input', calculateEnergyCost);
+
+//show/hide energy input
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleArrow = document.getElementById('toggle-arrow');
+    const energyBoostContainers = document.querySelectorAll('.energy-boost');
+
+    let isOpen = false;
+
+    toggleArrow.addEventListener('click', function() {
+        isOpen = !isOpen;
+
+        if (isOpen) {
+            toggleArrow.src = "../static/img/button raise down.png";
+
+            // Плавно раскрыть блоки
+            energyBoostContainers.forEach(container => {
+                container.classList.remove('hide'); 
+                container.style.display = 'flex';
+                container.classList.add('show'); 
+            });
+
+        } else {
+            toggleArrow.src = "../static/img/button raise up.png";
+
+            // Плавно скрыть блоки
+            energyBoostContainers.forEach(container => {
+                container.classList.remove('show'); 
+                container.classList.add('hide');
+
+                setTimeout(() => {
+                    container.style.display = 'none';
+                }, 500); 
+            });
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleArrowLimit = document.getElementById('toggle-arrow-limit');
+    const energyLimitContainer = document.querySelector('.energy-limit-container');
+    let isOpen = false;
+    toggleArrowLimit.addEventListener('click', function () {
+        isOpen = !isOpen
+        if (isOpen) {
+            toggleArrowLimit.src = "../static/img/button raise down.png";
+            energyLimitContainer.classList.remove('hide');
+            energyLimitContainer.style.display = 'block';
+            energyLimitContainer.classList.add('show');
+        } else {
+            toggleArrowLimit.src = "../static/img/button raise up.png";
+            energyLimitContainer.classList.remove('show');
+            energyLimitContainer.classList.add('hide');
+            setTimeout(() => {
+                energyLimitContainer.style.display = 'none';
+            }, 500); 
+        }
+    });
+});
