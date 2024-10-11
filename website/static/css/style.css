@@ -513,7 +513,7 @@
         background: linear-gradient(to bottom, #4D331C, #381E07);
         padding: 4% 4%;
         border-radius: 16px;
-        box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.4), 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.25), 0px 2px 4px 0px #381E07;
         width: 90%;
         margin-bottom: 5%;
     }
@@ -760,7 +760,7 @@
         font-size: 10px;
     }
     .popup-active {
-        display: block;
+        display: block !important;
     }
     .sell-button {
         background: linear-gradient(to bottom, #FF8534, #FE4D1C);
@@ -1580,9 +1580,8 @@
         width: 100%;
     }
     input {
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: unset;
         background-color: unset;
-        border-radius: 16px;
         padding: 2%;
         font-family: 'Balsamiq Sans';
         color: white;
@@ -1904,21 +1903,21 @@
         display: block;
         opacity: 1;
     }
-    .energy-limit-container {
+    .energy-limit-container, .eggs-per-tap-container {
         transition: opacity 0.5s ease-in-out;;
         opacity: 0;
-        display: none ;
+        display: none;
         position: relative;
         top: -20px;
     }
-    .energy-limit-container.show {
+    .energy-limit-container.show, .eggs-per-tap-container.show{
         opacity: 1;
         animation: fade-in 0.5s forwards;
     }
-    .energy-limit-container.hide {
+    .energy-limit-container.hide, .eggs-per-tap-container.hide {
         animation: fade-out 0.5s forwards;
     }
-    .energy-limit {
+    .energy-limit, .eggs-per-tap {
         display: flex;
         justify-content: space-between;
         padding: 5% 5%;
@@ -1927,11 +1926,76 @@
         margin-right: 7%;
         margin-left: 7%;
     }
-    .energy-limit > div:first-of-type {
+    .energy-limit > div:first-of-type, .eggs-per-tap > div:first-of-type {
         display: flex; 
         justify-content: space-between; 
         align-items: center; 
         margin-left: 35%;
+    }
+    .popup-exchange {
+        background-image: url(../img/exchange\ popup\ bg.png);
+        width: 92%;
+        height: fit-content;
+        padding: 3% 4%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        top: -345px;
+        z-index: 3;
+    }
+    .exchange-inputs {
+        margin-top: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .egg-input-wrapper {
+        background-image: url(../img/white\ vector.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 5% 4%;
+        width: 100%;
+    }
+    .egg-input-container {
+        background-color: #695038;
+        border-radius: 8px;
+        box-shadow: inset 0px 1px 2px 0px #583E27, 0px 2px 4px 0px #381E07;
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 4%;
+        position: relative;
+        top: -5px;
+        align-items: center;
+    }
+    .exchange-input {
+        border-left: 1px solid rgba(255, 255, 255, 0.5);
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        padding: 2% 4%;
+    }
+    .exchange-rate {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 5%;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        bottom: 10px;
+    }
+    .gold-wrapper {
+        background-image: url(../img/golden\ vector.png);
+        padding: 6% 7%;
+    }
+    .exchange-button {
+        background: linear-gradient(to bottom, #FFBA34, #FE881C);
+        box-shadow: 0px 5px 7px 0px rgba(40, 19, 0, 1), inset 0px -4px 4px 0px rgba(0, 0, 0, 0.4), inset 0px 4px 4px rgba(255, 255, 255, 0.4);
+        border: unset;
+        width: 50%;
+        margin-top: 5%;
+        padding: 5%;
+        font-size: 20px;
+        border-radius: 12px;
+    }
+    .popup-exchange {
+        display: none;
     }
 }
 

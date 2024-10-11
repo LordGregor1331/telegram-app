@@ -7,7 +7,7 @@
                     <div><img src="{{ url_for('static', filename='img/egg-no-bg.png') }}" alt=""><h4 class="balsamiq">507,981,000</h4></div>
                     <h4 class="balsamiq">Today <span class="arrow-up-html-code"> &#8593;</span> 342, 342 </h4>
                 </div>
-                <div class="change">
+                <div class="change" id="storage-change">
                     <div>
                         <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="">
                         <h4 class="balsamiq">Change</h4>
@@ -106,8 +106,33 @@
                             </div>
                         </div>
                     </div>
-                        <li><div><img src="{{ url_for('static', filename='img/raise-balance.png') }}" alt=""><h4 class="balsamiq">Energy per tap</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
+                    <div style="width: 100%;">    
+                        <li><div><img src="{{ url_for('static', filename='img/raise-balance.png') }}" alt=""><h4 class="balsamiq">Eggs per tap</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow-tap"></li>
+                        <div class="eggs-per-tap-container">
+                            <div class="eggs-per-tap">
+                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>3</span></h3>
+                                <div>
+                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
+                                </div>
+                                <img src="../static/img/button raise up.png" alt="">
+                            </div>
+                            <div class="eggs-per-tap">
+                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>5</span></h3>
+                                <div>
+                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
+                                </div>
+                                <img src="../static/img/button raise up.png" alt="">
+                            </div>
+                            <div class="eggs-per-tap">
+                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>10</span></h3>
+                                <div>
+                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
+                                </div>
+                                <img src="../static/img/button raise up.png" alt="">
+                            </div>
+                        </div>
                         <div class="boost-string"></div>
+                    </div>
                         <li><div><img src="{{ url_for('static', filename='img/autoenergy.png') }}" alt=""><h4 class="balsamiq">Autoclick</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
                     </div>
                 </div>
@@ -257,6 +282,30 @@
             <div class="popup-option option-value">
                 <button class="orange-button dark-orange-button balsamiq">Sell</button>
                 <div class="quantity-form sell-quantity-form"><button id="market-buy-minus" class="minus-button balsamiq  market-sell-minus">–</button><input type="number"><button id="market-buy-plus" class="plus-button balsamiq market-sell-plus">+</button></div>
+            </div>
+        </div>
+        <div class="popup popup-exchange">
+            <div class="cross-exit" id="popup-exchange-close"><img src="{{ url_for('static', filename='img/cross-exit.png') }}" alt=""></div>
+            <div class="exchange-inputs">
+                <div class="egg-input-wrapper">
+                    <div class="egg-input-container">
+                        <img src="../static/img/egg-no-bg.png" alt="" style="padding-right: 4%;">
+                        <input type="number" inputmode="numeric" placeholder="type amount of eggs" class="egg-input exchange-input">
+                        <h3 class="balsamiq" style="font-size: 14px; font-weight: 100; padding-left: 4%;">All</h3>
+                    </div>
+                </div>
+                <div class="exchange-rate">
+                    <img src="../static/img/Arrow 1.png" alt="">
+                    <h3 class="balsamiq" style="color: rgba(255, 255, 255, 0.6); font-size: 10px;">1,500 eggs = 1 token</h3>
+                </div>
+                <div class="egg-input-wrapper gold-wrapper">
+                    <div class="egg-input-container" style="top: 15px">
+                        <img src="../static/img/egg-no-bg.png" alt="" style="padding-right: 4%;">
+                        <input type="number" inputmode="numeric" placeholder="type amount of eggs" class="egg-input exchange-input">
+                        <h3 class="balsamiq" style="font-size: 14px; font-weight: 100; padding-left: 4%;">All</h3>
+                    </div>
+                </div>
+                <button type="submit" class="exchange-button balsamiq">Exchange</button>
             </div>
         </div>
     </section>

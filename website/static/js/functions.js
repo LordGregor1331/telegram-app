@@ -485,7 +485,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
+//show/hide energy limit
 document.addEventListener('DOMContentLoaded', function() {
     const toggleArrowLimit = document.getElementById('toggle-arrow-limit');
     const energyLimitContainer = document.querySelector('.energy-limit-container');
@@ -506,4 +506,45 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500); 
         }
     });
+});
+
+//show/hide eggs per tap
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleArrowPerTap = document.getElementById('toggle-arrow-tap')
+    const perTapContainer = document.querySelector('.eggs-per-tap-container')
+    let isOpen = false
+    toggleArrowPerTap.addEventListener('click', function () {
+        isOpen = !isOpen
+        if (isOpen) {
+            toggleArrowPerTap.src = "../static/img/button raise down.png"
+            perTapContainer.classList.remove('hide')
+            perTapContainer.style.display = 'block'
+            perTapContainer.classList.add('show')
+        } else {
+            toggleArrowPerTap.src = "../static/img/button raise up.png"
+            perTapContainer.classList.remove('show')
+            perTapContainer.classList.add('hide')
+            setTimeout (() => {
+                perTapContainer.style.display = 'none'
+            }, 500)
+        }
+    })
+})
+
+//exchange-popup
+document.addEventListener('DOMContentLoaded', () => {
+    const popupExchange = document.querySelector('.popup-exchange');
+    const popupOpenButton = document.getElementById('storage-change');
+    const popupCloseButton = document.getElementById('popup-exchange-close');
+
+    if (popupOpenButton && popupCloseButton && popupExchange) {
+        popupOpenButton.addEventListener('click', () => {
+            popupExchange.classList.add('popup-active');
+        });
+        popupCloseButton.addEventListener('click', () => {
+            popupExchange.classList.remove('popup-active');
+        });
+    } else {
+        console.error('One or more elements not found.');
+    }
 });
