@@ -1,53 +1,67 @@
-    <section class="section active" id="storage-page">
-        <div class="storage-page-gradient"></div>
-        <div class="storage-page-gradient-2nd"></div>
-        <header>
-            <nav class="storage-nav">
-                <div class="storage-navpoint" id="egg-navpoint">
-                    <div><img src="{{ url_for('static', filename='img/egg-no-bg.png') }}" alt=""><h4 class="balsamiq">507,981,000</h4></div>
-                    <h4 class="balsamiq">Today <span class="arrow-up-html-code"> &#8593;</span> 342, 342 </h4>
+<section class="section" id="storage-page">
+    <div class="storage-page-gradient"></div>
+    <div class="storage-page-gradient-2nd"></div>
+    <header>
+        <nav class="storage-nav">
+            <div class="storage-navpoint" id="egg-navpoint">
+                <div>
+                    <img src="{{ url_for('static', filename='img/egg-no-bg.png') }}" alt="">
+                    <h4 class="balsamiq egg-balance" id="egg-navpoint-balance">{{ "{:,.0f}".format(current_user.egg_balance) }}</h4>
                 </div>
-                <div class="change" id="storage-change">
-                    <div>
-                        <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="">
-                        <h4 class="balsamiq">Change</h4>
-                    </div>
+                <h4 class="balsamiq">Today <span class="arrow-up-html-code"> &#8593;</span> 342, 342</h4>
+            </div>
+
+            <div class="change" id="storage-change">
+                <div>
+                    <img src="{{ url_for('static', filename='img/arrow-right.png') }}" alt="">
+                    <h4 class="balsamiq">Change</h4>
                 </div>
-                <div class="storage-navpoint" id="token-navpoint">
-                    <div><img src="{{ url_for('static', filename='img/token.png') }}" alt=""><h4 class="balsamiq">800,000,010</h4></div>
-                    <h4 class="balsamiq">1,500 eggs = 1 token</h4>
+            </div>
+            <div class="storage-navpoint" id="token-navpoint">
+                <div>
+                    <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                    <!-- Dynamic Token Balance -->
+                    <h4 class="balsamiq token-balance">
+                        {{ "{:,.0f}".format(current_user.egg_balance / eggs_to_coin_price) }}
+                    </h4>
                 </div>
-            </nav>
-            <div class="storage-info-container">
-                <div id="storage-info-blur">
-                    <div class="storage-info">
-                        <h4 class="balsamiq">Storage info</h4>
-                        <div class="storage-info-items">
-                            <div class="storage-info-item">
-                                <span class="balsamiq">Volume</span>
-                                <p class="balsamiq">80/100K</p>
-                            </div>
-                            <div class="storage-info-item">
-                                <span class="balsamiq">Chickens</span>
-                                <p class="balsamiq">30</p>
-                            </div>
-                            <div class="storage-info-item">
-                                <span class="balsamiq">Corn</span>
-                                <p class="balsamiq">-12/min</p>
-                            </div>
-                            <div class="storage-info-item">
-                                <span class="balsamiq">Level</span>
-                                <p class="balsamiq">Bronze</p>
-                            </div>
+                <h4 class="balsamiq">{{ "{:,}".format(eggs_to_coin_price) }} eggs = 1 token</h4>
+            </div>
+        </nav>
+        <div class="storage-info-container">
+            <div id="storage-info-blur">
+                <div class="storage-info">
+                    <h4 class="balsamiq">Storage info</h4>
+                    <div class="storage-info-items">
+                        <div class="storage-info-item">
+                            <span class="balsamiq">Volume</span>
+                            <p class="balsamiq">
+                                <span id="storage-info-balance" class="egg-balance">{{ "{:,.0f}".format(current_user.egg_balance) }}</span>/
+                                <span id="storage-info-max" class="storage-max">{{ "{:,.0f}".format(current_user.storage_max_volume) }}</span>
+                            </p>
+                        </div>
+                        <!-- Other storage info items -->
+                        <div class="storage-info-item">
+                            <span class="balsamiq">Chickens</span>
+                            <p class="balsamiq">30</p>
+                        </div>
+                        <div class="storage-info-item">
+                            <span class="balsamiq">Corn</span>
+                            <p class="balsamiq">-12/min</p>
+                        </div>
+                        <div class="storage-info-item">
+                            <span class="balsamiq">Level</span>
+                            <p class="balsamiq">Bronze</p>
                         </div>
                     </div>
                 </div>
-                <div id="storage-upgrade">
-                    <a class="upgrade-button balsamiq">Upgrade</a>
-                </div>
             </div>
-        </header>
-        <main>
+            <div id="storage-upgrade">
+                <a class="upgrade-button balsamiq">Upgrade</a>
+            </div>
+        </div>
+    </header>
+    <main>
             <div class="energy-switch">
                 <span href="" class="balsamiq storage-switch-active" id="energy-switch-energy">Energy</span>
                 <span href="" class="balsamiq" id="energy-switch-chicken">Chicken</span>

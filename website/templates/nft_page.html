@@ -4,7 +4,7 @@
             <h4 class="roboto">Token balance</h4>
             <div class="token-text-container">
                 <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
-                <span class="balsamiq">800,010,800</span>
+                <span class="balsamiq">{{current_user.coin_balance}}</span>
             </div>
         </div>
         <nav>

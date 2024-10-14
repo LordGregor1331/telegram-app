@@ -1,44 +1,67 @@
-<section class="section" id="main-page">
-        <header>
-            <nav class="main-page-nav">
-                <div class="main-page-navpoint" id="earnpertap">
-                    <h3 class="navpoint-header header-h3 roboto">Earn per tap</h3>
-                    <div class="navpoint-header-imgcontainer"><img src="{{ url_for('static', filename='img/egg.png' ) }}" alt=""><span class="navpoint-span roboto"> +12</span></div>
-                </div>
-                <div class="main-page-navpoint" id="profperhour">
-                    <h3 class="navpoint-header header-h3 roboto">Profit per hour</h3>
-                    <div class="navpoint-header-imgcontainer"><img src="{{ url_for('static', filename='img/egg.png' ) }}" alt=""><span class="navpoint-span roboto"> +636.31K</span><a href=""><img src="{{ url_for('static', filename='img/information.png' ) }}" alt=""></a></div>
-                </div>
-                <div class="main-page-navpoint" id="storagevolume">
-                    <h3 class="navpoint-header header-h3 roboto">Storage volume</h3>
-                    <div class="navpoint-header-imgcontainer"><img src="{{ url_for('static', filename='img/egg.png' ) }}" alt=""><span class="navpoint-span roboto"> 80K/100K</span></div>
-                </div>
-            </nav>
-        </header>
-        <main class="main-content mainpage-main">
-            <div class="main-info">
-                <div id="egg-capacity"><img src="{{ url_for('static', filename='img/egg bigger.png' ) }}" alt=""><span class="balsamiq"> 507,981,000</span></div>
-                <div id="info-icons">
-                    <a href=""><img src="{{ url_for('static', filename='img/Question Mark.png' ) }}" alt=""></a>
-                    <a href=""><img src="{{ url_for('static', filename='img/chest-open.png' ) }}" alt=""></a>
-                    <a href=""><img src="{{ url_for('static', filename='img/calendar.png' ) }}" alt=""></a>
+<section class="section active" id="main-page">
+    <header>
+        <nav class="main-page-nav">
+            <div class="main-page-navpoint" id="earnpertap">
+                <h3 class="navpoint-header header-h3 roboto">Earn per tap</h3>
+                <div class="navpoint-header-imgcontainer">
+                    <img src="{{ url_for('static', filename='img/egg.png') }}" alt="">
+                    <span class="navpoint-span roboto earn-per-tap">+{{ current_user.earn_per_tap }}</span>
                 </div>
             </div>
-            <div class="storage">
-                <img src="{{ url_for('static', filename='img/storage1lvl.png' ) }}" alt="">
-            </div>
-            <div class="energy-upgrade-container">
-                <div class="main-page-navpoint energy-container">
-                    <div id="energy-capacity">
-                        <img src="{{ url_for('static', filename='img/corn.png' ) }}" alt=""> <span class="balsamiq"> 800/1000</span> <img src="{{ url_for('static', filename='img/plusbutton.png' ) }}" alt="">
-                    </div>
-                    <h4 class="roboto">-1 per tap</h4>
-                </div>
-                <div id="upgrade">
-                    <div id="upgrade-arrow"><img src="{{ url_for('static', filename='img/arrow-up.png' ) }}" alt=""><span class="balsamiq">Upgrade</span></div>
-                    <p class="level roboto">Lvl: <span class="roboto">Bronze</span></p>
+            <div class="main-page-navpoint" id="profperhour">
+                <h3 class="navpoint-header header-h3 roboto">Profit per hour</h3>
+                <div class="navpoint-header-imgcontainer">
+                    <img src="{{ url_for('static', filename='img/egg.png') }}" alt="">
+                    <span class="navpoint-span roboto profit-per-hour">+{{ "{:,.2f}".format(current_user.profit_per_hour) }}</span>
+                    <a href="#"><img src="{{ url_for('static', filename='img/information.png') }}" alt=""></a>
                 </div>
             </div>
+            <div class="main-page-navpoint" id="storagevolume">
+                <h3 class="navpoint-header header-h3 roboto">Storage volume</h3>
+                <div class="navpoint-header-imgcontainer">
+                    <img src="{{ url_for('static', filename='img/egg.png') }}" alt="">
+                    <span class="navpoint-span roboto egg-balance">
+                        {{ "{:,.0f}".format(current_user.egg_balance) }}
+                    </span>
+                    <span class="navpoint-span roboto storage-max">
+                        /{{ "{:,.0f}".format(current_user.storage_max_volume) }}
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main-content mainpage-main">
+        <div class="main-info">
+            <div id="egg-capacity">
+                <img src="{{ url_for('static', filename='img/egg bigger.png') }}" alt="">
+                <span class="balsamiq egg-balance"> {{ "{:,.0f}".format(current_user.egg_balance) }}</span>
+            </div>
+            <div id="info-icons">
+                <a href="#"><img src="{{ url_for('static', filename='img/Question Mark.png') }}" alt=""></a>
+                <a href="#"><img src="{{ url_for('static', filename='img/chest-open.png') }}" alt=""></a>
+                <a href="#"><img src="{{ url_for('static', filename='img/calendar.png') }}" alt=""></a>
+            </div>
+        </div>
+        <div class="storage">
+            <img src="{{ url_for('static', filename='img/storage1lvl.png') }}" alt="">
+        </div>
+        <div class="energy-upgrade-container">
+            <div class="main-page-navpoint energy-container">
+                <div id="energy-capacity">
+                    <img src="{{ url_for('static', filename='img/corn.png') }}" alt="">
+                    <span class="balsamiq"> {{ "{:,.0f}".format(current_user.food_balance) }}/{{ "{:,.0f}".format(current_user.food_balance_max) }}</span>
+                    <img src="{{ url_for('static', filename='img/plusbutton.png') }}" alt="">
+                </div>
+                <h4 class="roboto">-1 per tap</h4>
+            </div>
+            <div id="upgrade">
+                <div id="upgrade-arrow">
+                    <img src="{{ url_for('static', filename='img/arrow-up.png') }}" alt="">
+                    <span class="balsamiq">Upgrade</span>
+                </div>
+                <p class="level roboto">Lvl: <span class="roboto">{{ current_user.storage_lvl }}</span></p>
+            </div>
+        </div>
             <div class="buy-chicken">
                 <div class="chicken" id="default-chicken">
                     <h4 class="balsamiq">Free</h4>
@@ -66,12 +89,12 @@
                     <div class="blur-container spanblur-container"><span class="chicken-quantity balsamiq">4 pcs</span><span class="balsamiq">+</span></div>
                 </div>
             </div>
-        </main>
-        <footer class="footer tap-bar">
-            <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
-            <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
-            <div class="footer-nav" id="main-button"><img src="{{ url_for('static', filename='img/eggmine.png') }}" alt=""> <h4 class="balsamiq">Main</h4></div>
-            <div class="footer-nav" id="earn-button"><img src="{{ url_for('static', filename='img/cash.png') }}" alt=""> <h4 class="balsamiq">Earn</h4></div>
-            <div class="footer-nav" id="wallet-button"><img src="{{ url_for('static', filename='img/wallet.png') }}" alt=""> <h4 class="balsamiq">Wallet</h4></div>
-        </footer>
-    </section>
+    </main>
+    <footer class="footer tap-bar">
+        <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
+        <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
+        <div class="footer-nav" id="main-button"><img src="{{ url_for('static', filename='img/eggmine.png') }}" alt=""> <h4 class="balsamiq">Main</h4></div>
+        <div class="footer-nav" id="earn-button"><img src="{{ url_for('static', filename='img/cash.png') }}" alt=""> <h4 class="balsamiq">Earn</h4></div>
+        <div class="footer-nav" id="wallet-button"><img src="{{ url_for('static', filename='img/wallet.png') }}" alt=""> <h4 class="balsamiq">Wallet</h4></div>
+    </footer>
+</section>
