@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const storageMaxElements = document.querySelectorAll('.storage-max');
     const foodBalanceElement = document.querySelector('#energy-capacity span'); // Assuming this is unique
     const earnPerTapElement = document.querySelector('.earn-per-tap'); // Assuming this is unique
-    const tokenBalanceElements = document.querySelectorAll('.token-balance');
+    const tokenBalanceElements = document.querySelectorAll('.token-balance123');
 
     // Debugging: Log selected elements
     console.log("Egg Balance Elements:", eggBalanceElements);

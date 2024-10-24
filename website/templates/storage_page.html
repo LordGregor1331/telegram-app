@@ -8,7 +8,8 @@
                     <img src="{{ url_for('static', filename='img/egg-no-bg.png') }}" alt="">
                     <h4 class="balsamiq egg-balance" id="egg-navpoint-balance">{{ "{:,.0f}".format(current_user.egg_balance) }}</h4>
                 </div>
-                <h4 class="balsamiq">Today <span class="arrow-up-html-code"> &#8593;</span> 342, 342</h4>
+                <h4 class="balsamiq">Eggs in the storage</h4>
+                <!--<h4 class="balsamiq">Today <span class="arrow-up-html-code"> &#8593;</span> 342, 342</h4>-->
             </div>
 
             <div class="change" id="storage-change">
@@ -21,7 +22,7 @@
                 <div>
                     <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
                     <!-- Dynamic Token Balance -->
-                    <h4 class="balsamiq token-balance">
+                    <h4 class="balsamiq token-balance token-balance123">
                         {{ "{:,.0f}".format(current_user.egg_balance / eggs_to_coin_price) }}
                     </h4>
                 </div>
@@ -70,7 +71,7 @@
                 <div class="energy-switch-switcher energy-switch-switcher-active buy-energy-container" id="buy-energy-section">
                     <div class="boost-string-container">
                         <div style="width: 100%;">
-                            <li><div><img src="{{ url_for('static', filename='img/energy-upgrade.png') }}" alt=""><h4 class="balsamiq">Buy more energy</h4></div><div><h4 class="balsamiq">64.567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow"></li>
+                            <li><div><img src="{{ url_for('static', filename='img/energy-upgrade.png') }}" alt=""><h4 class="balsamiq">Buy more energy</h4></div><div><h4 class="balsamiq">&nbsp;</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow"></li>
                             <div class="energy-boost energy-flat-container">
                                 <div>
                                     <img src="../static/img/energy-upgrade.png" alt="">
@@ -84,70 +85,93 @@
                             </div>
                             <div class="boost-string"></div>
                         </div>
-                    <div style="width: 100%;">
+                        <div style="width: 100%;">
+                            <li>
+                                <div>
+                                    <img src="{{ url_for('static', filename='img/buy-corn.png') }}" alt="">
+                                    <h4 class="balsamiq">Upgrade food limit</h4>
+                                </div>
+                                <div>
+                                    <h4 class="balsamiq">
+                                        {% if energy_cost != "Max Level" %}
+                                            {{ "{:,.0f}".format(energy_cost) }}
+                                        {% else %}
+                                            {{ energy_cost }}
+                                        {% endif %}
+                                    </h4>
+                                    <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                </div>
+                                <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow-limit">
+                            </li>
+                            <div class="energy-limit-container">
+                                {% for upgrade in next_energy_upgrades %}
+                                    <div class="energy-limit">
+                                        <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">
+                                            {% if loop.index0 == 0 %}
+                                                Increase the limit by <span>{{ upgrade.value }}</span>
+                                            {% else %}
+                                                Increase the limit by <span>{{ upgrade.value }}</span>
+                                            {% endif %}
+                                        </h3>
+                                        <div>
+                                            <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">
+                                                {{ "{:,.2f}".format(upgrade.cumulative_cost) }}
+                                            </span>
+                                            <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                        </div>
+                                        <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div style="width: 100%;">
+                            <li>
+                                <div>
+                                    <img src="{{ url_for('static', filename='img/raise-balance.png') }}" alt="">
+                                    <h4 class="balsamiq">Upgrade eggs per tap</h4>
+                                </div>
+                                <div>
+                                    <h4 class="balsamiq">
+                                        {% if tap_cost != "Max Level" %}
+                                            {{ "{:,.0f}".format(tap_cost) }}
+                                        {% else %}
+                                            {{ tap_cost }}
+                                        {% endif %}
+                                    </h4>
+                                    <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                </div>
+                                <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow-tap">
+                            </li>
+                            <div class="eggs-per-tap-container">
+                                {% for upgrade in next_tap_upgrades %}
+                                    <div class="eggs-per-tap">
+                                        <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">
+                                            +<span>{{ upgrade.value }} eggs per tap</span>
+                                        </h3>
+                                        <div>
+                                            <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">
+                                                {{ "{:,.2f}".format(upgrade.cumulative_cost) }}
+                                            </span>
+                                            <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
+                                        </div>
+                                        <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <div class="boost-string"></div>
+                        </div>
+
                         <li>
                             <div>
-                                <img src="{{ url_for('static', filename='img/buy-corn.png') }}" alt="">
-                                <h4 class="balsamiq">Boost energy limit</h4>
+                                <img src="{{ url_for('static', filename='img/autoenergy.png') }}" alt="">
+                                <h4 class="balsamiq">Autoclick</h4>
                             </div>
                             <div>
-                                <h4 class="balsamiq">64,567</h4>
-                                <img src="{{ url_for('static', filename='img/token.png') }}" alt="">
-                            </div>
-                            <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""  id="toggle-arrow-limit">
+                                <h4 class="balsamiq">1,500</h4>
+                                <img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div>
+                            <img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="">
                         </li>
-                        <div class="energy-limit-container">
-                            <div class="energy-limit">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">Up to <span>2000</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                            <div class="energy-limit">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">Up to <span>5000</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                            <div class="energy-limit">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">Up to <span>10000</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div style="width: 100%;">    
-                        <li><div><img src="{{ url_for('static', filename='img/raise-balance.png') }}" alt=""><h4 class="balsamiq">Eggs per tap</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt="" id="toggle-arrow-tap"></li>
-                        <div class="eggs-per-tap-container">
-                            <div class="eggs-per-tap">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>3</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                            <div class="eggs-per-tap">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>5</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                            <div class="eggs-per-tap">
-                                <h3 class="balsamiq" style="font-size: 14px; font-weight: 100;">+<span>10</span></h3>
-                                <div>
-                                    <span class="balsamiq" style="margin-right: 5%; font-size: 14px;">5000</span> <img src="../static/img/token.png" alt="">
-                                </div>
-                                <img src="../static/img/button raise up.png" alt="">
-                            </div>
-                        </div>
-                        <div class="boost-string"></div>
-                    </div>
-                        <li><div><img src="{{ url_for('static', filename='img/autoenergy.png') }}" alt=""><h4 class="balsamiq">Autoclick</h4></div><div><h4 class="balsamiq">64,567</h4><img src="{{ url_for('static', filename='img/token.png') }}" alt=""></div><img src="{{ url_for('static', filename='img/button raise up.png') }}" alt=""></li>
                     </div>
                 </div>
                 <div class="energy-switch-switcher" id="buy-chicken-section">
@@ -310,7 +334,7 @@
                 </div>
                 <div class="exchange-rate">
                     <img src="../static/img/Arrow 1.png" alt="">
-                    <h3 class="balsamiq" style="color: rgba(255, 255, 255, 0.6); font-size: 10px;">1,500 eggs = 1 token</h3>
+                    <h3 class="balsamiq" style="color: rgba(255, 255, 255, 0.6); font-size: 10px;">{{eggs_to_coin_price}} eggs = 1 token</h3>
                 </div>
                 <div class="egg-input-wrapper gold-wrapper">
                     <div class="egg-input-container" style="top: 15px">

@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //deposit_page.html
-//open list 
+//open list
 document.addEventListener('DOMContentLoaded', function() {
     // Выбираем все элементы с классами USDT, TON и FIAT
     document.querySelectorAll('.USDT-deposit-details, .TON-deposit-details, .FIAT-deposit-details').forEach(function(detailButton) {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const currencySwitch = document.querySelector('.currency-type-switch');
         const currencyIcon = document.querySelector('.currency-type-switch-icon');
         const currencyNumb = document.querySelector('.currency-type-switch-numb');
-        
+
         if (currencySwitch && currencyIcon && currencyNumb) {
             currencySwitch.classList.add('hidden');
             currencyIcon.classList.add('hidden');
@@ -375,9 +375,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.currency-type').forEach(button => {
         button.addEventListener('click', function() {
             document.querySelectorAll('.currency-type').forEach(btn => btn.classList.remove('currency-type-active'));
-            
+
             this.classList.add('currency-type-active');
-            
+
             updateCurrency(this.id);
         });
     });
@@ -389,7 +389,7 @@ document.getElementById('transaction-history-switcher').addEventListener('click'
     document.getElementById('transaction-history-page').classList.add('active')
 })
 
-//deposit-page-switcher 
+//deposit-page-switcher
 document.getElementById('deposit-page-switcher').addEventListener('click', function() {
     document.getElementById('wallet-page').classList.remove('active')
     document.getElementById('deposit-page').classList.add('active')
@@ -444,9 +444,9 @@ document.addEventListener('DOMContentLoaded', function() {
 const energyInput = document.getElementById('energy-input');
 const energyCost = document.getElementById('energy-cost');
 function calculateEnergyCost() {
-    const energyAmount = parseInt(energyInput.value) || 0;  
-    const tokenCost = energyAmount * 27;  
-    energyCost.textContent = tokenCost;  
+    const energyAmount = parseInt(energyInput.value) || 0;
+    const tokenCost = energyAmount * 27;
+    energyCost.textContent = tokenCost;
 }
 energyInput.addEventListener('input', calculateEnergyCost);
 
@@ -465,9 +465,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Плавно раскрыть блоки
             energyBoostContainers.forEach(container => {
-                container.classList.remove('hide'); 
+                container.classList.remove('hide');
                 container.style.display = 'flex';
-                container.classList.add('show'); 
+                container.classList.add('show');
             });
 
         } else {
@@ -475,12 +475,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Плавно скрыть блоки
             energyBoostContainers.forEach(container => {
-                container.classList.remove('show'); 
+                container.classList.remove('show');
                 container.classList.add('hide');
 
                 setTimeout(() => {
                     container.style.display = 'none';
-                }, 500); 
+                }, 500);
             });
         }
     });
@@ -503,7 +503,7 @@ document.addEventListener('DOMContentLoaded', function() {
             energyLimitContainer.classList.add('hide');
             setTimeout(() => {
                 energyLimitContainer.style.display = 'none';
-            }, 500); 
+            }, 500);
         }
     });
 });
@@ -548,3 +548,4 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('One or more elements not found.');
     }
 });
+

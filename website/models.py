@@ -41,9 +41,8 @@ class Users(db.Model, UserMixin):
     last_egg_coin_exchange = db.Column(DateTime, default=func.now())
     egg_balance = db.Column(db.Float, default=0.0)
     coin_balance = db.Column(db.Float, nullable=False, default=0.0)
-    earn_per_tap = db.Column(db.Integer, default=1)
-    food_balance = db.Column(db.Integer, nullable=False, default=0)
-    food_balance_max = db.Column(db.Integer, nullable=False, default=0)
+    food_balance = db.Column(db.Integer, nullable=False, default=300)
+    food_balance_max = db.Column(db.Integer, nullable=False, default=300)
     tap_lvl = db.Column(db.Integer, default=1)
     energy_lvl = db.Column(db.Integer, default=1)
 

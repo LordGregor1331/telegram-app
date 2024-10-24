@@ -5,7 +5,7 @@
                 <h3 class="navpoint-header header-h3 roboto">Earn per tap</h3>
                 <div class="navpoint-header-imgcontainer">
                     <img src="{{ url_for('static', filename='img/egg.png') }}" alt="">
-                    <span class="navpoint-span roboto earn-per-tap">+{{ current_user.earn_per_tap }}</span>
+                    <span class="navpoint-span roboto earn-per-tap">+{{ earn_per_tap }}</span>
                 </div>
             </div>
             <div class="main-page-navpoint" id="profperhour">
@@ -52,7 +52,7 @@
                     <span class="balsamiq"> {{ "{:,.0f}".format(current_user.food_balance) }}/{{ "{:,.0f}".format(current_user.food_balance_max) }}</span>
                     <img src="{{ url_for('static', filename='img/plusbutton.png') }}" alt="">
                 </div>
-                <h4 class="roboto">-1 per tap</h4>
+                <h4 class="roboto">+{{earn_per_tap}} per tap</h4>
             </div>
             <div id="upgrade">
                 <div id="upgrade-arrow">

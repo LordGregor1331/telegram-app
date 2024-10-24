@@ -15,22 +15,24 @@
                     <div>
                         <div class="token-text-container">
                             <img src="/static/img/token.png" alt="">
-                            <span class="balsamiq">8000</span>
+                            <span class="balsamiq">{{ "{:,.0f}".format(current_user.coin_balance) }}</span>
                         </div>
                         <p class="balsamiq">~ 459 $</p>
                     </div>
-                    <h3 class="balsamiq">Today &nbsp; <span>&uarr;</span><span>&nbsp; 342, 342</span></h3>
+                    <h3 class="balsamiq">Token coins</span></h3>
+                    <!--<h3 class="balsamiq">Today &nbsp; <span>&uarr;</span><span>&nbsp; 342, 342</span></h3>-->
                 </div>
                 <div class="wallet-container wallet-exchange-rate">
-                    <h4 class="balsamiq">1, 500 eggs = 1 token</h4><h4 class="balsamiq">746378 token = 3 тон</h4>
+                    <h4 class="balsamiq">{{ "{:,}".format(eggs_to_coin_price) }} eggs = 1 token</h4><h4 class="balsamiq">
+                    {{coins_to_usd_price*3}} tokens = 3 тон</h4>
                 </div>
                 <div class="wallet-container wallet-income" id="wallet-general-content">
-                    <div><h3 class="balsamiq">Storage</h3><h4 class="balsamiq">507, 981,000</h4></div>
-                    <div><h3 class="balsamiq">Referal</h3><h4 class="balsamiq">507, 981,000</h4></div>
+                    <div><h3 class="balsamiq">Storage</h3><h4 class="balsamiq token-balance123">{{ "{:,.0f}".format(current_user.egg_balance / eggs_to_coin_price) }}</h4></div>
+                    <div><h3 class="balsamiq">Referal</h3><h4 class="balsamiq">0</h4></div>
                 </div>
                 <div class="wallet-container wallet-income" id="wallet-storage-content">
-                    <div><h3 class="balsamiq">Eggs</h3><h4 class="balsamiq">507, 981,000</h4></div>
-                    <div><h3 class="balsamiq">Tokens</h3><h4 class="balsamiq">507, 981,000</h4></div>
+                    <div><h3 class="balsamiq">Eggs</h3><h4 class="balsamiq">{{ "{:,.0f}".format(current_user.egg_balance) }}</h4></div>
+                    <div><h3 class="balsamiq">Tokens</h3><h4 class="balsamiq">{{ "{:,.0f}".format(current_user.coin_balance) }}</h4></div>
                 </div>
                 <div class="wallet-container wallet-income referal-wallet-list" id="wallet-referal-content">
                     <ul>
