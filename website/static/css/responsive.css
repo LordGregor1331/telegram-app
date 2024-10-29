@@ -71,4 +71,7 @@
     .energy-limit > div:first-of-type {
         margin-left: 33%;
     }
+    .buy-chicken {
+        overflow-x: scroll;
+    }
 }

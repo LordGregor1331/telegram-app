@@ -549,3 +549,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.querySelector('.energy-container').addEventListener('click', function () {
+    document.getElementById('storage-page').classList.add('active')
+    document.getElementById('main-page').classList.remove('active')
+})
+
+//animation for reward
+
+const getRewardButton = document.getElementById('get-reward');
+const animatedToken = document.getElementById('animated-token');
+
+// Функция для запуска анимации
+function playTokenAnimation() {
+    animatedToken.classList.add('active'); // Добавляем класс для запуска анимации
+
+    // Удаляем класс через 5 секунд, чтобы можно было запустить анимацию снова
+    setTimeout(() => {
+        animatedToken.classList.remove('active');
+    }, 5000);
+}
+
+// Добавляем обработчик клика на кнопку
+getRewardButton.addEventListener('click', playTokenAnimation);

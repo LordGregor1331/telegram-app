@@ -29,6 +29,7 @@
                 </div>
             </div>
         </nav>
+        <div id="animated-token" class="animated-token balsamiq">+&nbsp;<span class="balsamiq">3000</span>&nbsp;tokens</div>
     </header>
     <main class="main-content mainpage-main">
         <div class="main-info">
@@ -37,7 +38,7 @@
                 <span class="balsamiq egg-balance"> {{ "{:,.0f}".format(current_user.egg_balance) }}</span>
             </div>
             <div id="info-icons">
-                <a href="#"><img src="{{ url_for('static', filename='img/Question Mark.png') }}" alt=""></a>
+                <a href="#"><img src="{{ url_for('static', filename='img/Question_Mark.png') }}" alt=""></a>
                 <a href="#"><img src="{{ url_for('static', filename='img/chest-open.png') }}" alt=""></a>
                 <a href="#"><img src="{{ url_for('static', filename='img/calendar.png') }}" alt=""></a>
             </div>
@@ -52,7 +53,7 @@
                     <span class="balsamiq"> {{ "{:,.0f}".format(current_user.food_balance) }}/{{ "{:,.0f}".format(current_user.food_balance_max) }}</span>
                     <img src="{{ url_for('static', filename='img/plusbutton.png') }}" alt="">
                 </div>
-                <h4 class="roboto">+{{earn_per_tap}} per tap</h4>
+                <h4 class="roboto">-{{earn_per_tap}} per tap</h4>
             </div>
             <div id="upgrade">
                 <div id="upgrade-arrow">
@@ -90,6 +91,38 @@
                 </div>
             </div>
     </main>
+    <div class="overlay"></div>
+    <div class="main-page-popup full-storage">
+        <div class="main-page-popup-content">
+            <img src="../static/img/chicken-on-mainpage-popup.png" alt="" class="absolute-img">
+            <h2 class="balsamiq">Oops! The storage is full</h2>
+            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <div class="button-popup" id="to-storage">
+                <img src="../static/img/storage-upgrade-popup.png" alt="">
+                <p class="balsamiq" style="font-size: 18px;">Upgrade</p>
+            </div>
+        </div>
+    </div>
+    <div class="main-page-popup almost-full-storage">
+        <div class="main-page-popup-content">
+            <img src="../static/img/chicken-on-mainpage-popup.png" alt="" class="absolute-img">
+            <h2 class="balsamiq">Oops! The storage is full</h2>
+            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <div class="button-popup" id="to-storage">
+                <p class="balsamiq" style="font-size: 18px;">To storage</p>
+            </div>
+        </div>
+    </div>
+    <div class="daily-popup">
+        <div class="daily-popup-content">
+            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <h2 class="balsamiq">Your daily reward</h2>
+            <h4 class="balsamiq">Day <span>1</span></h4>
+            <img src="../static/img/daily-reward-token.png" alt="">
+            <h4 class="balsamiq">+ <span>3000</span>&nbsp;tokens</h4>
+            <div class="balsamiq get-button" id="get-reward">Get reward</div>
+        </div>
+    </div>
     <footer class="footer tap-bar">
         <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
         <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
