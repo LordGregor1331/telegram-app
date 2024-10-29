@@ -2053,6 +2053,7 @@
         top: 30%;
         border-radius: 16px;
         box-shadow: 0px 5px 7px 0px rgba(40, 19, 0, 0.4), inset 0px -3px 3px 0px rgba(0, 0, 0, 0.4), inset 0px 3px 3px 0px rgba(255, 255, 255, 0.4);
+        display: none;
     }
     .daily-popup-content {
         background-image: url('../img/reward.png');
