@@ -1,4 +1,4 @@
-<section class="section active" id="main-page">
+<section class="section" id="main-page">
     <header>
         <nav class="main-page-nav">
             <div class="main-page-navpoint" id="earnpertap">
@@ -34,7 +34,7 @@
     <main class="main-content mainpage-main">
         <div class="main-info">
             <div id="egg-capacity">
-                <img src="{{ url_for('static', filename='img/egg bigger.png') }}" alt="">
+                <img src="{{ url_for('static', filename='img/egg_bigger.png') }}" alt="">
                 <span class="balsamiq egg-balance"> {{ "{:,.0f}".format(current_user.egg_balance) }}</span>
             </div>
             <div id="info-icons">
@@ -66,11 +66,11 @@
             <div class="buy-chicken">
                 <div class="chicken" id="default-chicken">
                     <h4 class="balsamiq">Free</h4>
-                    <img src="{{ url_for('static', filename='img/Default_chicken_character_in_the_style_of_the_Disney_studio_ca_0_e7e8e0c4-589c-4219-9759-56a6ed2be8fa_0 2.png' ) }}" alt="" style="position: relative; z-index: 1;">
+                    <img src="{{ url_for('static', filename='img/Default_chicken_character_in_the_style_of_the_Disney_studio_ca_0_e7e8e0c4-589c-4219-9759-56a6ed2be8fa_02.png' ) }}" alt="" style="position: relative; z-index: 1;">
                     <div class="blur-container"><span class="balsamiq">30 days</span></div>
                 </div>
                 <div class="chicken" >
-                    <img src="{{ url_for('static', filename='img/Default_chicken_character_in_the_style_of_the_Disney_studio_ca_0_e7e8e0c4-589c-4219-9759-56a6ed2be8fa_0 2.png' ) }}" alt="">
+                    <img src="{{ url_for('static', filename='img/Default_chicken_character_in_the_style_of_the_Disney_studio_ca_0_e7e8e0c4-589c-4219-9759-56a6ed2be8fa_02.png' ) }}" alt="">
                     <div class="blur-container spanblur-container"><span class="chicken-quantity balsamiq">4 pcs</span><span class="balsamiq">+</span></div>
                 </div>
                 <div class="chicken" >
@@ -94,20 +94,20 @@
     <div class="overlay"></div>
     <div class="main-page-popup full-storage">
         <div class="main-page-popup-content">
-            <img src="../static/img/chicken-on-mainpage-popup.png" alt="" class="absolute-img">
+            <img src="{{ url_for('static', filename='img/chicken-on-mainpage-popup.png' ) }}" alt="" class="absolute-img">
             <h2 class="balsamiq">Oops! The storage is full</h2>
-            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <img src="{{ url_for('static', filename='img/cross-exit-gold.png' ) }}" alt="" style="position: absolute; top: 5%; left: 90%;">
             <div class="button-popup" id="to-storage">
-                <img src="../static/img/storage-upgrade-popup.png" alt="">
+                <img src="{{ url_for('static', filename='img/storage-upgrade-popup.png' ) }}" alt="">
                 <p class="balsamiq" style="font-size: 18px;">Upgrade</p>
             </div>
         </div>
     </div>
     <div class="main-page-popup almost-full-storage">
         <div class="main-page-popup-content">
-            <img src="../static/img/chicken-on-mainpage-popup.png" alt="" class="absolute-img">
+            <img src="{{ url_for('static', filename='img/chicken-on-mainpage-popup.png' ) }}" alt="" class="absolute-img">
             <h2 class="balsamiq">Oops! The storage is full</h2>
-            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <img src="{{ url_for('static', filename='img/cross-exit-gold.png' ) }}" alt="" style="position: absolute; top: 5%; left: 90%;">
             <div class="button-popup" id="to-storage">
                 <p class="balsamiq" style="font-size: 18px;">To storage</p>
             </div>
@@ -115,10 +115,10 @@
     </div>
     <div class="daily-popup">
         <div class="daily-popup-content">
-            <img src="../static/img/cross-exit-gold.png" alt="" style="position: absolute; top: 5%; left: 90%;">
+            <img src="{{ url_for('static', filename='img/cross-exit-gold.png' ) }}" alt="" style="position: absolute; top: 5%; left: 90%;">
             <h2 class="balsamiq">Your daily reward</h2>
             <h4 class="balsamiq">Day <span>1</span></h4>
-            <img src="../static/img/daily-reward-token.png" alt="">
+            <img src="{{ url_for('static', filename='img/daily-reward-token.png' ) }}" alt="">
             <h4 class="balsamiq">+ <span>3000</span>&nbsp;tokens</h4>
             <div class="balsamiq get-button" id="get-reward">Get reward</div>
         </div>

@@ -2139,5 +2139,58 @@
     .animated-token.active {
         animation: tokenAnimation 5s ease-in-out forwards; /* Запуск анимации */
     }
+    #upgrade-page {
+        background-image: url(../img/main-page-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .upgrade-span {
+        font-size: 18px;
+    }
+    .upgrade-page-navpoint {
+        width: 40%;
+    }
+    .upgrade-header {
+        font-size: 14px;
+    }
+    #upgrade-switcher {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40%;
+    }
+    .upgrade-switch {
+        width: 40px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .newstorage-upgrade {
+        background: linear-gradient(135deg, #FFBA34 0%, #FE881C 100%);
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
+        width: 50%;
+        padding: 2%;
+    }
+    .stroke-text {
+        text-shadow: 
+        -1px -1px 0 #000, 
+         1px -1px 0 #000, 
+        -1px  1px 0 #000, 
+         1px  1px 0 #000;
+        margin: 0;
+    }
+    .newstorage-upgrade > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #upgrade-price {
+        font-size: 16px;
+        margin: 0;
+    }
+    .newstorage-upgrade > div:last-child {
+        margin-top: 5%;
+    }
 }
-

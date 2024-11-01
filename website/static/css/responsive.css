@@ -74,4 +74,10 @@
     .buy-chicken {
         overflow-x: scroll;
     }
+    #upgrade-switcher > img {
+        width: 270px;
+    }
+    #upgrade-switcher {
+        padding-top: 20%;
+    }
 }

@@ -1,0 +1,45 @@
+<section class="section active" id="upgrade-page">
+    <div style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+        <div class="main-page-navpoint upgrade-page-navpoint" id="storagevolume">
+            <h3 class="navpoint-header header-h3 upgrade-header roboto">Storage volume</h3>
+            <div class="navpoint-header-imgcontainer">
+                <img src="{{ url_for('static', filename='img/egg.png') }}" alt="">
+                <span class="navpoint-span upgrade-span roboto egg-balance">
+                    {{ "{:,.0f}".format(current_user.egg_balance) }}
+                </span>
+                <span class="navpoint-span upgrade-span roboto storage-max">
+                    /{{ "{:,.0f}".format(current_user.storage_max_volume) }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <h2 class="balsamiq" style="text-align: center; font-weight: 100; font-size: 14px;">Lvl: <span class="balsamiq" style="font-size: 14px;">Silver</span></h2>
+    <main id="upgrade-switcher">
+        <div class="upgrade-switch" id="upgrade-switch-left">
+            <img src="{{ url_for('static', filename='img/storageupgrade-left.png')}}" alt="">
+        </div>
+        <img src="../static/img/storage2lvl.png" alt="" class="upgrade-house">
+        <div class="upgrade-switch" id="upgrade-switch-right">
+            <img src="{{ url_for('static', filename='img/storageupgrade-right.png')}}" alt="">
+        </div>
+    </main>
+    <div style="display: flex; justify-content: center; margin-top: 10%;">
+        <div class="newstorage-upgrade">
+            <div>
+                <img src="{{ url_for('static', filename='img/button-raise-up-big.png')}}" alt="" style="margin-right: 5%;">
+                <h2 class="balsamiq stroke-text">Upgrade</h2>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='img/token.png')}}" alt="" style="margin-right: 5%;">
+                <h2 class="balsamiq" id="upgrade-price">800,000,100</h2>
+            </div>
+        </div>
+    </div>
+    <footer class="footer tap-bar">
+        <div class="footer-nav active" id="nft-button"><img src="{{ url_for('static', filename='img/nft 4.png') }}" alt=""> <h4 class="balsamiq">NFT</h4></div>
+        <div class="footer-nav" id="storage-button"><img src="{{ url_for('static', filename='img/storage.png') }}" alt=""> <h4 class="balsamiq">Storage</h4></div>
+        <div class="footer-nav" id="main-button"><img src="{{ url_for('static', filename='img/eggmine.png') }}" alt=""> <h4 class="balsamiq">Main</h4></div>
+        <div class="footer-nav" id="earn-button"><img src="{{ url_for('static', filename='img/cash.png') }}" alt=""> <h4 class="balsamiq">Earn</h4></div>
+        <div class="footer-nav" id="wallet-button"><img src="{{ url_for('static', filename='img/wallet.png') }}" alt=""> <h4 class="balsamiq">Wallet</h4></div>
+    </footer>
+</section>
