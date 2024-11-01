@@ -1089,7 +1089,7 @@
         width: 100%;
         height: 100%;
         background-repeat: no-repeat;
-        background-image: url(/img/фон\ 3.png);
+        background-image: url(/img/фон-3.png);
         background-size: cover;
     }
     .ticket-text-container {
@@ -1933,7 +1933,7 @@
         margin-left: 35%;
     }
     .popup-exchange {
-        background-image: url(../img/exchange\ popup\ bg.png);
+        background-image: url(../img/exchange-popup-bg.png);
         width: 92%;
         height: fit-content;
         padding: 3% 4%;
@@ -1949,7 +1949,7 @@
         align-items: center;
     }
     .egg-input-wrapper {
-        background-image: url(../img/white\ vector.png);
+        background-image: url(../img/white-vector.png);
         background-repeat: no-repeat;
         background-size: cover;
         padding: 5% 4%;
@@ -1981,7 +1981,7 @@
         bottom: 10px;
     }
     .gold-wrapper {
-        background-image: url(../img/golden\ vector.png);
+        background-image: url(../img/golden-vector.png);
         padding: 6% 7%;
     }
     .exchange-button {
@@ -2056,7 +2056,7 @@
         display: none;
     }
     .daily-popup-content {
-        background-image: url('../img/reward.png');
+        background-image: url(../img/reward.png);
         background-size: cover;
         background-repeat: repeat;
         background-position: 0 0;
