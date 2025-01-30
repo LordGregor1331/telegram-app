@@ -2193,4 +2193,82 @@
     .newstorage-upgrade > div:last-child {
         margin-top: 5%;
     }
+
+
+    .navpoint-header-imgcontainer > img {
+        width: 24px;
+        height: 24px;
+    }
+    #egg-capacity > img {
+        width: 32px;
+        height: 36px;
+    }
+    #info-icons > a > img {
+        width: 24px;
+        height: 24px;
+    }
+    .navpoint-header-imgcontainer > a > img {
+        width: 16px;
+        height: 16px;
+    }
+    #energy-capacity > img {
+        width: 21px;
+        height: 24px;
+    }
+    #energy-capacity > img:last-of-type {
+        height: 21px;
+    }
+    #upgrade-arrow > img {
+        width: 24px;
+        height: 24px;
+    }
+    .footer-nav > img {
+        width: 35px;
+        height: 35px;
+    }
+    .buy-chicken {
+        overflow-x: scroll;
+    }
+    #storage-change img {
+        width: 28px;
+    }
+    #token-navpoint img {
+        width: 28px;
+        height: 28px;
+    }
+    #egg-navpoint img {
+        width: 20px;
+    }
+    .boost-string-container li > div:last-of-type > img {
+        width: 22px;
+    }
+    .boost-string-container li > div:first-of-type > img {
+        width: 38px;
+    }
+    .boost-string-container li > img {
+        width: 32px;
+    }
+    .products > li > img {
+        width: 220px;
+        left: -1%;
+    }
+    .popup-market-buy > img, .popup-market-sell > img {
+        width: 300px;
+    }
+    .energy-limit > div > img, .eggs-per-tap > div > img {
+        width: 20px;
+    }
+    .energy-limit > img, .eggs-per-tap > img {
+        width: 32px;
+        margin-left: 5%;
+    }
+    .task-container > img {
+        width: 48px;
+    }
+    .task-container > div > img {
+        width: 18px;
+    }
+    .image-container-wallet > img {
+        width: 45px;
+    }
 }

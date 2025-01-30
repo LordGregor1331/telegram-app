@@ -461,7 +461,7 @@ document.addEventListener('DOMContentLoaded', function() {
         isOpen = !isOpen;
 
         if (isOpen) {
-            toggleArrow.src = "../static/img/button raise down.png";
+            toggleArrow.src = "../static/img/button-raise-down.png";
 
             // Плавно раскрыть блоки
             energyBoostContainers.forEach(container => {
@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
         } else {
-            toggleArrow.src = "../static/img/button raise up.png";
+            toggleArrow.src = "../static/img/button-raise-up.png";
 
             // Плавно скрыть блоки
             energyBoostContainers.forEach(container => {
@@ -493,12 +493,12 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleArrowLimit.addEventListener('click', function () {
         isOpen = !isOpen
         if (isOpen) {
-            toggleArrowLimit.src = "../static/img/button raise down.png";
+            toggleArrowLimit.src = "../static/img/button-raise-down.png";
             energyLimitContainer.classList.remove('hide');
             energyLimitContainer.style.display = 'block';
             energyLimitContainer.classList.add('show');
         } else {
-            toggleArrowLimit.src = "../static/img/button raise up.png";
+            toggleArrowLimit.src = "../static/img/button-raise-up.png";
             energyLimitContainer.classList.remove('show');
             energyLimitContainer.classList.add('hide');
             setTimeout(() => {
@@ -516,12 +516,12 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleArrowPerTap.addEventListener('click', function () {
         isOpen = !isOpen
         if (isOpen) {
-            toggleArrowPerTap.src = "../static/img/button raise down.png"
+            toggleArrowPerTap.src = "../static/img/button-raise-down.png"
             perTapContainer.classList.remove('hide')
             perTapContainer.style.display = 'block'
             perTapContainer.classList.add('show')
         } else {
-            toggleArrowPerTap.src = "../static/img/button raise up.png"
+            toggleArrowPerTap.src = "../static/img/button-raise-up.png"
             perTapContainer.classList.remove('show')
             perTapContainer.classList.add('hide')
             setTimeout (() => {
@@ -571,3 +571,4 @@ function playTokenAnimation() {
 
 // Добавляем обработчик клика на кнопку
 getRewardButton.addEventListener('click', playTokenAnimation);
+
