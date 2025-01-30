@@ -28,6 +28,9 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     }
+    .desktop { 
+        display: none;
+    }
     .section {
         padding: 5% 5%;
         height: 96vh;
